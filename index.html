@@ -1,0 +1,82 @@
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+<title>Модель проектного финансирования девелоперского проекта</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<h1>Модель проектного финансирования</h1>
+
+<div class="block">
+
+<h2>Параметры проекта</h2>
+
+<label>Общая продаваемая площадь (м²)</label>
+<input id="area" type="number" value="20000">
+
+<label>Средняя цена реализации (₽/м²)</label>
+<input id="price" type="number" value="180000">
+
+<label>Бюджет строительства</label>
+<input id="capex" type="number" value="2500000000">
+
+<label>Доля ипотечных продаж</label>
+<input id="mortgage" type="number" value="0.7">
+
+<label>Ключевая ставка ЦБ</label>
+<input id="keyRate" type="number" value="0.16">
+
+<button onclick="runModel()">Рассчитать</button>
+
+</div>
+
+
+<div class="block">
+
+<h2>Результаты проекта</h2>
+
+<p>Выручка проекта: <span id="revenue"></span></p>
+
+<p>Прибыль девелопера: <span id="profit"></span></p>
+
+<p>Пиковая задолженность: <span id="debt"></span></p>
+
+<p>Coverage эскроу: <span id="coverage"></span></p>
+
+<p>Ставка проектного финансирования: <span id="rate"></span></p>
+
+</div>
+
+<div class="block">
+
+<h2>Показатели для банка</h2>
+
+<p>DSCR: <span id="dscr"></span></p>
+
+<p>Equity Ratio: <span id="equity"></span></p>
+
+<p>Loan to Cost: <span id="ltc"></span></p>
+
+</div>
+
+<h2>График задолженности</h2>
+<canvas id="debtChart"></canvas>
+
+<h2>График наполнения эскроу</h2>
+<canvas id="escrowChart"></canvas>
+
+<script src="model.js"></script>
+<script src="bank.js"></script>
+<script src="charts.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
